@@ -15,6 +15,7 @@ public class FlockManager : MonoBehaviour {
     private Transform flock_transform;
     public CircleCollider2D inner_collider;
     public CircleCollider2D outter_collider;
+    public float bird_speed = 0f;
     private void Awake() {
         instance = this;
         flock_transform = this.GetComponent<Transform>();
@@ -43,7 +44,29 @@ public class FlockManager : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-
+        if (Input.GetKey(KeyCode.W)) {
+            this.GetComponent<Rigidbody2D>().velocity += new Vector2(0, bird_speed);
+            foreach (Transform tmp_bird in bird_list) {
+                tmp_bird.GetComponent<Rigidbody2D>().velocity += new Vector2(0, bird_speed);
+            }
+        } else if (Input.GetKey(KeyCode.S)) {
+            this.GetComponent<Rigidbody2D>().velocity += new Vector2(0, bird_speed);
+            foreach (Transform tmp_bird in bird_list) {
+                tmp_bird.GetComponent<Rigidbody2D>().velocity += new Vector2(0, bird_speed);
+            }
+        } else if (Input.GetKey(KeyCode.A)) {
+            this.GetComponent<Rigidbody2D>().velocity += new Vector2(-1 * bird_speed, 0);
+            foreach (Transform tmp_bird in bird_list) {
+                tmp_bird.GetComponent<Rigidbody2D>().velocity += new Vector2(-1 * bird_speed, 0);
+            }
+        } else if (Input.GetKey(KeyCode.D)) {
+            this.GetComponent<Rigidbody2D>().velocity += new Vector2(bird_speed, 0);
+            foreach (Transform tmp_bird in bird_list) {
+                tmp_bird.GetComponent<Rigidbody2D>().velocity += new Vector2(bird_speed, 0);
+            }
+        } else {
+            this.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+        }
 
     }
 
