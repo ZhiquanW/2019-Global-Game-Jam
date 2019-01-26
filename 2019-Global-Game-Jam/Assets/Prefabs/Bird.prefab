@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ca258e132be48442bc0f98403049e5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  influence_num: 3
+  influence_num: 2
   repulsive_radius: 8
   velocity_list: []
   ave_velocity: {x: 0, y: 0}
