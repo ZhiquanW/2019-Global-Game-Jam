@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CollisionEvent : MonoBehaviour
-{
-    void OnTriggerEnter2D(Collider2D _colliderObject) {
-        if (_colliderObject.gameObject.tag == Tags.Ground) {
+public class CollisionEvent : MonoBehaviour {
+    private void OnTriggerEnter2D(Collider2D collision) {
+        if (collision.gameObject.tag == Tags.Ground) {
             Destroy(gameObject);
+        } else if (collision.gameObject.tag == Tags.Bird) {
+
         }
     }
 }

@@ -6,4 +6,5 @@ public class Tags : MonoBehaviour
 {
     public const string Ground = "Ground";
     public const string Man = "Man";
+    public const string Bird = "Bird";
 }
