@@ -74,7 +74,9 @@ public class BirdController : MonoBehaviour
             }
             target_v = (ave_pos2.normalized + ave_velocity.normalized) * ave_velocity.magnitude + repulsive_dir + in_vel* tmp_center_dis * repulsive_velocity/10;
             if(target_v.magnitude > FlockManager.instance.max_velocity) {
-                target_v *= 0.8f;
+                float ratian = Mathf.Atan2(target_v.y, target_v.x);
+                target_v = new Vector2(FlockManager.instance.max_velocity * Mathf.Cos(ratian),
+                    FlockManager.instance.max_velocity * Mathf.Sin(ratian));
             }
             
         }
