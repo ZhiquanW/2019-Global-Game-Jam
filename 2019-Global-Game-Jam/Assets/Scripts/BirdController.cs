@@ -50,6 +50,9 @@ public class BirdController : MonoBehaviour
                     continue;
                 }
                 for (int j = 0; j < tmp_list.Count; ++j) {
+                    if (tmp_list[j] == null) {
+                        continue;
+                    }
                     float tmp_dis_0 = Vector3.Distance(tmp_list[j].transform.position, this.transform.position);
                     if (tmp_dis_0 < tmp_min) {
                         tmp_min = tmp_dis_0;
@@ -59,7 +62,7 @@ public class BirdController : MonoBehaviour
 
                 ave_velocity += tmp_list[tmp_index].GetComponent<Rigidbody2D>().velocity;
                 ave_pos += tmp_list[tmp_index].transform.position;
-                tmp_list.RemoveAt(tmp_index);
+                tmp_list[tmp_index] = null;
             }
             ave_velocity /= influence_num;
 
