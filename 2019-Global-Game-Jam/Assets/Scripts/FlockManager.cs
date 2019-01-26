@@ -27,7 +27,6 @@ public class FlockManager : MonoBehaviour {
             tmp_radian = Random.Range(0,2f * Mathf.PI);
             Vector3 tmp_offset = new Vector3(Mathf.Cos(tmp_radian)*tmp_len,Mathf.Sin(tmp_radian)*tmp_len, 0);
             Transform tmp_bird = Instantiate(bird_perfab, flock_transform.position + tmp_offset, Quaternion.Euler(new Vector3(0,0,180/Mathf.PI*tmp_radian)));
-            tmp_bird.GetComponent<Rigidbody2D>().velocity = tmp_bird.transform.rotation * Random.Range(min_velocity, max_velocity);
         }
     }
 
