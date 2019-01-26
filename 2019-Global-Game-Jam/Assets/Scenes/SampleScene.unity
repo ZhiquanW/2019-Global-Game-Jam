@@ -164,7 +164,7 @@ Camera:
   far clip plane: 1000
   field of view: 12.624639
   orthographic: 1
-  orthographic size: 200
+  orthographic size: 112.18848
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -206,6 +206,7 @@ GameObject:
   - component: {fileID: 1836574022}
   - component: {fileID: 1836574024}
   - component: {fileID: 1836574023}
+  - component: {fileID: 1836574025}
   m_Layer: 0
   m_Name: Flock
   m_TagString: Flock
@@ -221,7 +222,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1836574020}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -239,16 +240,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4779f33a5384e36469799e2212142628, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  birds_num: 10
+  birds_num: 15
   inner_radius: 1
-  outter_radius: 40
-  min_velocity: 15
-  max_velocity: 20
+  outter_radius: 30
+  min_velocity: 10
+  max_velocity: 15
   bird_list: []
   bird_prefab: {fileID: 7242653680359559087, guid: e6185bd71a3170143b47780d2d4ff462,
     type: 3}
   inner_collider: {fileID: 1836574024}
   outter_collider: {fileID: 1836574023}
+  bird_speed: 1
 --- !u!58 &1836574023
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -280,4 +282,25 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 100
+  m_Radius: 30
+--- !u!50 &1836574025
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1836574020}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

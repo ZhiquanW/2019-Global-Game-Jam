@@ -13,6 +13,9 @@ public class BirdController : MonoBehaviour
     public float timer = 0;
     public float frame_inteval = 0;
     public Vector2 target_v = new Vector2(0, 0);
+    public Sprite bird_sprite;
+    public Color dead_color;
+    public bool is_dead = false;
     // Start is called before the first frame update
     void Start() {
 
@@ -20,6 +23,9 @@ public class BirdController : MonoBehaviour
 
     // Update is called once per frame
     void Update() {
+        if (is_dead) {
+            return;
+        }
         timer += Time.deltaTime;
         if (timer > frame_inteval) {
             timer = 0;
@@ -43,7 +49,11 @@ public class BirdController : MonoBehaviour
             }
             List<Transform> tmp_list = new List<Transform>(FlockManager.instance.bird_list);
             Vector3 ave_pos = new Vector3(0, 0, 0);
+            int found_num = 0;
             for (int i = 0; i < influence_num; ++i) {
+                if(found_num == influence_num) {
+                    break;
+                }
                 float tmp_min = Mathf.Infinity;
                 int tmp_index = 0;
                 if (tmp_list.Count == 0) {
@@ -63,6 +73,7 @@ public class BirdController : MonoBehaviour
                 ave_velocity += tmp_list[tmp_index].GetComponent<Rigidbody2D>().velocity;
                 ave_pos += tmp_list[tmp_index].transform.position;
                 tmp_list[tmp_index] = null;
+                found_num++;
             }
             ave_velocity /= influence_num;
 
@@ -89,4 +100,10 @@ public class BirdController : MonoBehaviour
         //print(Mathf.Atan2(this.GetComponent<Rigidbody2D>().velocity.y, this.GetComponent<Rigidbody2D>().velocity.x));
     }
     
+
+    public void Dead() {
+        is_dead = true;
+        this.GetComponent<SpriteRenderer>().color = dead_color;
+        this.GetComponent<Rigidbody2D>().gravityScale = 1;
+    }
 }
