@@ -337,7 +337,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4779f33a5384e36469799e2212142628, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  birds_num: 5
+  birds_num: 20
   inner_radius: 1
   outter_radius: 40
   min_velocity: 15

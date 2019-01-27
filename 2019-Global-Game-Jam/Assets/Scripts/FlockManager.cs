@@ -45,22 +45,22 @@ public class FlockManager : MonoBehaviour {
     // Update is called once per frame
     void Update() {
         if (Input.GetKey(KeyCode.W)) {
-            this.GetComponent<Rigidbody2D>().velocity += new Vector2(0, bird_speed);
+            this.GetComponent<Rigidbody2D>().velocity = new Vector2(0, bird_speed);
             foreach (Transform tmp_bird in bird_list) {
                 tmp_bird.GetComponent<Rigidbody2D>().velocity += new Vector2(0, bird_speed);
             }
         } else if (Input.GetKey(KeyCode.S)) {
-            this.GetComponent<Rigidbody2D>().velocity += new Vector2(0, -bird_speed);
+            this.GetComponent<Rigidbody2D>().velocity = new Vector2(0, -bird_speed);
             foreach (Transform tmp_bird in bird_list) {
                 tmp_bird.GetComponent<Rigidbody2D>().velocity += new Vector2(0, -bird_speed);
             }
         } else if (Input.GetKey(KeyCode.A)) {
-            this.GetComponent<Rigidbody2D>().velocity += new Vector2(-1 * bird_speed, 0);
+            this.GetComponent<Rigidbody2D>().velocity = new Vector2(-bird_speed, 0);
             foreach (Transform tmp_bird in bird_list) {
-                tmp_bird.GetComponent<Rigidbody2D>().velocity += new Vector2(-1 * bird_speed, 0);
+                tmp_bird.GetComponent<Rigidbody2D>().velocity += new Vector2(-bird_speed, 0);
             }
         } else if (Input.GetKey(KeyCode.D)) {
-            this.GetComponent<Rigidbody2D>().velocity += new Vector2(bird_speed, 0);
+            this.GetComponent<Rigidbody2D>().velocity = new Vector2(bird_speed, 0);
             foreach (Transform tmp_bird in bird_list) {
                 tmp_bird.GetComponent<Rigidbody2D>().velocity += new Vector2(bird_speed, 0);
             }

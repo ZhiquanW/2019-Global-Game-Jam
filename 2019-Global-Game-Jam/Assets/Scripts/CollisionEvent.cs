@@ -7,7 +7,8 @@ public class CollisionEvent : MonoBehaviour {
         if (collision.gameObject.tag == Tags.Ground) {
             Destroy(gameObject);
         } else if (collision.gameObject.tag == Tags.Bird) {
-
+            collision.GetComponent<BirdController>().Dead();
+            Destroy(gameObject);
         }
     }
 }

@@ -52,12 +52,13 @@ MonoBehaviour:
   repulsive_radius: 8
   velocity_list: []
   ave_velocity: {x: 0, y: 0}
-  repulsive_velocity: 0.3
+  repulsive_velocity: 3
   timer: 0
   frame_inteval: 1
   target_v: {x: 0, y: 0}
   bird_sprite: {fileID: 0}
   dead_color: {r: 0, g: 0, b: 0, a: 0}
+  is_dead: 0
 --- !u!212 &7242653680359559086
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -113,10 +114,10 @@ PolygonCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7242653680359559084}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -231,7 +232,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7242653680359559084}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -247,7 +248,7 @@ PolygonCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7242653680359559084}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0

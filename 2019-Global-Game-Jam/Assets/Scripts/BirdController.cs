@@ -105,5 +105,12 @@ public class BirdController : MonoBehaviour
         is_dead = true;
         this.GetComponent<SpriteRenderer>().color = dead_color;
         this.GetComponent<Rigidbody2D>().gravityScale = 1;
+        for(int i = 0;i < FlockManager.instance.bird_list.Count;++i) {
+            if(FlockManager.instance.bird_list[i].getComponent<BirdController>().is_dead == true) {
+                FlockManager.instance.bird_list.RemoveAt(i);
+                print("Bird Dead");
+                break;
+            }
+        }
     }
 }
